@@ -237,7 +237,7 @@
             // 15秒経過タイマー (最初の表示用)
             useEffect(() => {
                 let timer;
-                if (currentPage === 6 && !showFinalPopup && !popupDismissed) {
+                if (currentPage === 7 && !showFinalPopup && !popupDismissed) {
                     timer = setTimeout(() => {
                         setShowFinalPopup(true);
                     }, 15000);
@@ -247,7 +247,7 @@
 
             // スクロール監視
             const handleScroll = () => {
-                if (currentPage !== 6 || !scrollContainerRef.current) return;
+                if (currentPage !== 7 || !scrollContainerRef.current) return;
                 
                 const container = scrollContainerRef.current;
                 const scrollPosition = container.scrollTop + container.clientHeight;
@@ -575,7 +575,7 @@
                     content: (
                         <div className="space-y-8 page-transition pb-8 text-left">
                             <div className="px-2 text-left">
-                                <p className="text-gray-700 text-[13px] font-medium leading-relaxed text-justify text-left">
+                                <p className="text-gray-700 text-[12px] leading-relaxed text-justify text-left">
                                     現在、ライブ配信アプリは多種多様なものがありますが、大きく分けると「顔出しをするもの」と、「顔出しをしないもの」の2つに分けられます。
                                 </p>
                             </div>
@@ -588,7 +588,7 @@
                                     </div>
                                     <p className="text-[11px] text-gray-400 font-bold mb-3 text-left">Pococha, 17LIVE, TikTok, BIGO LIVE, ミクチャなど</p>
                                     
-                                    <div className="mb-4 rounded-xl overflow-hidden shadow-sm text-left">
+                                    <div className="mb-4 overflow-hidden shadow-sm text-left">
                                         <img src="face_cam_app.jpg" alt="顔出しアプリ配信イメージ" className="w-full h-auto object-cover" />
                                     </div>
 
@@ -735,7 +735,7 @@
                 },
                 // Page 4: 実績
                 { 
-                    title: "どのくらい稼げるの？", 
+                    title: "どのくらい稼げる？", 
                     subtitle: "ライバーのタイプ別・収益シミュレーション！", 
                     color: "from-purple-600 to-indigo-400", 
                     content: (
@@ -774,7 +774,7 @@
                                 <div className="mt-4">
                                     <p className="text-[10px] font-bold text-pink-500 mb-1">ライブ配信による変化</p>
                                     <p className="text-[11px] text-gray-600 leading-relaxed italic border-l-2 border-pink-200 pl-3 text-justify">
-                                        「仕事で疲れたし、夜ごはんはコンビニでいいや」…そんな毎日が、今では「デパ地下に寄って好きなお惣菜を選ぼう！」に変わりました。<br/><br/>
+                                        「『仕事で疲れたし、夜ごはんはコンビニでいいや』…そんな毎日が、今では「デパ地下に寄って好きなお惣菜を選ぼう！」に変わりました。<br/><br/>
                                         配信の収益は頑張った日のご褒美に！ずっと欲しかったデパコスやブランドバッグを自分にプレゼントしたり、防犯面で安心なオートロック付きのマンションへ引越したり。ライブ配信で理想のライフスタイルを叶えることができました！」
                                     </p>
                                 </div>
@@ -861,7 +861,7 @@
                                         <img src="ONECARAT_top.png" alt="ONECARAT実績" className="w-full h-auto shadow-sm object-contain block" />
                                     </div>
 
-                                    <p className="text-[11px] text-gray-700 leading-relaxed text-justify mb-1">
+                                    <p className="text-[12px] text-gray-700 leading-relaxed text-justify mb-1">
                                         「本当に未経験からそんなに稼げるの？」と思うかもしれませんが、ONECARATでは多くのライバーがゼロから結果を出しています。業界トップクラスのノウハウとサポート体制があるからこそ、個人で活動するよりも確実なステップアップが可能になります。
                                         <br/>
                                         <br/>
@@ -872,7 +872,141 @@
                         </div>
                     )
                 },
-                // Page 5: FAQ
+
+                // --- Page 5: 夢・チャンス & 実績セクション ---
+                { 
+                    title: "他にどんなメリットがある？", 
+                    subtitle: "アプリ内イベントで掴める様々なチャンス！", 
+                    color: "from-rose-400 to-orange-400", 
+                    content: (
+                        <div className="space-y-6 page-transition pb-16 text-left">
+                            <div className="px-2">
+                                <p className="text-gray-700 text-[12px] leading-relaxed text-justify mb-4">
+                                    「お金が稼げるのはわかったけど、それだけでみんな続けてるの？」<br/><br/>
+                                    実は、多くのライバーが配信を続ける最大の理由は、収益以外にも<span className="text-rose-600 font-black border-b-2 border-rose-200">「夢を叶えるチャンス」</span>が豊富にあるからです。
+                                    ライブ配信アプリ内では毎月、様々な企業やメディアとコラボした「イベント」が開催されています。リスナーからの応援を力にランキング上位を目指すことで、普段の生活では得られない特別な実績や、豪華な報酬を手にすることができます。
+                                </p>
+                                <p className="text-gray-700 text-[12px] leading-relaxed text-justify">
+                                    ここでは、ライブ配信を通じて叶えられる具体的なチャンスをご紹介します！
+                                </p>
+                            </div>
+
+                            {/* 1. 実用的プライズ */}
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-amber-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-2xl font-bold text-amber-600 leading-none">1</span>
+                                    <h4 className="font-black text-[15px] text-amber-600 leading-tight">実用的なプライズ</h4>
+                                </div>
+
+                                <div className="mt-4 mb-4 overflow-hidden shadow-md">
+                                     <img 
+                                        src="practical prize.png" 
+                                        alt="実用的なプライズ" 
+                                        className="w-full h-auto object-cover" 
+                                        />
+                                </div>
+
+                                <ul className="text-[13px] text-gray-600 space-y-2 mb-2 list-disc pl-5 leading-relaxed">
+                                    <li><span className="font-bold text-gray-800">豪華グルメ：</span>黒毛和牛セット、産地直送カニ、高級フルーツ定期便、人気スイーツなど。</li>
+                                    <li><span className="font-bold text-gray-800">最新ガジェット・家電：</span>最新iPhone、iPad、ダイソンのドライヤー、高級炊飯器など。</li>
+                                    <li><span className="font-bold text-gray-800">カタログギフト・宿泊券：</span>高級ホテルペア宿泊券、テーマパークチケット、Amazonギフト券など。</li>
+                                    <li><span className="font-bold text-gray-800">配信機材：</span>高性能マイク、照明機材、配信用タブレットなど。</li>
+                                </ul>
+                            </div>
+
+                            {/* 2. メディア・広告 */}
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-rose-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-2xl font-bold text-rose-600 leading-none">2</span>
+                                    <h4 className="font-black text-[15px] text-rose-600 leading-tight">メディア・広告への出演</h4>
+                                </div>
+
+                                <div className="mt-4 mb-4 overflow-hidden shadow-md">
+                                     <img 
+                                        src="Media appearance.png" 
+                                        alt="メディア・広告への出演" 
+                                        className="w-full h-auto object-cover" 
+                                        />
+                                </div>
+
+                                <ul className="text-[13px] text-gray-600 space-y-2 mb-2 list-disc pl-5 leading-relaxed">
+                                    <li><span className="font-bold text-gray-800">有名雑誌への掲載：</span>『an・an』『VOGUE』『non-no』等の誌面掲載。</li>
+                                    <li><span className="font-bold text-gray-800">都市部の屋外ビジョン：</span>渋谷、新宿、心斎橋等の大型ビジョンでの放映。</li>
+                                    <li><span className="font-bold text-gray-800">交通機関のジャック：</span>山手線の中吊り広告、主要駅の巨大ポスター、アドトラック走行。</li>
+                                    <li><span className="font-bold text-gray-800">地上波テレビ出演：</span>全国放送のバラエティ番組内での紹介やCM出演。</li>
+                                </ul>
+                            </div>
+
+                            {/* 3. ステージ・リアル現場 */}
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-orange-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-2xl font-bold text-orange-600 leading-none">3</span>
+                                    <h4 className="font-black text-[15px] text-orange-600 leading-tight">ステージ・リアル現場での主役体験</h4>
+                                </div>
+
+                                <div className="mt-4 mb-4 overflow-hidden shadow-md">
+                                     <img 
+                                        src="Runway show appearance.png" 
+                                        alt="ランウェイ出演" 
+                                        className="w-full h-auto object-cover" 
+                                        />
+                                </div>
+
+                                <ul className="text-[13px] text-gray-600 space-y-2 mb-2 list-disc pl-5 leading-relaxed">
+                                    <li><span className="font-bold text-gray-800">ファッションショー出演：</span>『関西コレクション』『東京ガールズコレクション』などでのランウェイ出演。</li>
+                                    <li><span className="font-bold text-gray-800">プロ野球公式戦の始球式：</span>人気球団の冠試合での始球式登板、スタジアムビジョン紹介。</li>
+                                    <li><span className="font-bold text-gray-800">音楽フェス出演：</span>プロ仕様の音響・照明設備が整った大舞台でのライブパフォーマンス。</li>
+                                    <li><span className="font-bold text-gray-800">アンバサダー活動：</span>自治体や有名ブランドの「顔」としてのイベント出演・PR活動。</li>
+                                </ul>
+                            </div>
+
+                            {/* 4. 制作実績・プロデュース */}
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-indigo-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-2xl font-bold text-indigo-600 leading-none">4</span>
+                                    <h4 className="font-black text-[15px] text-indigo-600 leading-tight">自分だけの制作実績・プロデュース</h4>
+                                </div>
+
+                                <div className="mt-4 mb-4 overflow-hidden shadow-md">
+                                     <img 
+                                        src="recording.png" 
+                                        alt="レコーディング" 
+                                        className="w-full h-auto object-cover" 
+                                        />
+                                </div>
+
+                                <ul className="text-[13px] text-gray-600 space-y-2 mb-2 list-disc pl-5 leading-relaxed">
+                                    <li><span className="font-bold text-gray-800">オリジナル楽曲提供：</span>有名プロデューサーによる楽曲制作、音楽サブスクでの配信。</li>
+                                    <li><span className="font-bold text-gray-800">アニメ・ゲームの声優出演：</span>地上波アニメや人気スマホゲームのキャラクターボイス担当。</li>
+                                    <li><span className="font-bold text-gray-800">自身のオリジナルグッズ制作：</span>自身のアイコンを用いたアパレル、雑貨の公式プロデュース。</li>
+                                </ul>
+                            </div>
+
+                            {/* まとめ・結論セクション：最大のアピール */}
+                            <div className="relative pt-4">                                
+                                <div className="bg-gradient-to-br from-rose-50 via-white to-orange-50 p-4 rounded-xl border-2 border-rose-200 shadow-xl relative overflow-hidden">
+                                    {/* 背景の薄い装飾 */}
+                                    <div className="absolute -right-4 -bottom-4 opacity-10">
+                                    </div>
+
+                                    <h5 className="text-rose-600 font-bold text-lg mb-4 flex items-center justify-center gap-2 w-full text-center">
+                                    スマホ1台で、次のステージへ
+                                    </h5>
+                                    
+                                    <p className="text-[13px] text-gray-800 leading-relaxed text-justify mb-4">
+                                        通常、一部のタレントしか出演できないようなメディアや舞台も、ライブ配信なら「リスナーの応援」という明確な実績によって、自らの手で出演権を勝ち取ることができます。
+                                    </p>
+                                    
+                                    <p className="text-[13px] text-gray-700 leading-relaxed text-justify">
+                                        街頭ビジョンや有名雑誌への掲載は、単なる思い出作りではありません。それは、そのまま<span className="text-rose-600 font-black border-b-2 border-rose-200">「モデル・タレント」としての確かな活動実績</span>となり、芸能界やインフルエンサーとしての次なるステップに繋がる強力な武器となります。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                },
+
+                // Page 6: FAQ
                 { title: "よくある疑問を解消！", subtitle: "不安を解消して安心してスタートしよう！", color: "from-sky-500 to-blue-400", content: (
                     <div className="space-y-4 page-transition text-left pb-8">
                         {[
@@ -891,13 +1025,14 @@
                                 <h4 className="font-bold text-xs text-blue-700 flex gap-2 text-left"><span className="text-blue-300 font-bold text-left">Q.</span> {faq.q}</h4>
                                 <div className="mt-2 pl-6 relative text-left">
                                     <div className="absolute left-1 top-0 text-blue-200 text-xs font-bold italic text-left">A.</div>
-                                    <p className="text-[11px] text-gray-600 leading-relaxed text-justify text-left">{faq.a}</p>
+                                    <p className="text-[13px] text-gray-600 leading-relaxed text-justify text-left">{faq.a}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 ) },
-                // Page 6: 配信の始め方3ステップ
+
+                // Page 7: 配信の始め方3ステップ
                 { 
                     title: "配信の始め方3ステップ", 
                     subtitle: "しっかり準備して挑戦しよう！", 
@@ -906,7 +1041,7 @@
                         <div className="space-y-5 page-transition pb-3 text-left">
                             {/* Step 1 */}
                             <div className="bg-white p-5 rounded-xl shadow-sm border border-orange-100 text-left">
-                                <h4 className="font-bold text-[14px] text-orange-600 mb-4 flex items-center gap-2 text-left">
+                                <h4 className="font-bold text-[13px] text-orange-600 mb-4 flex items-center gap-2 text-left">
                                     <span className="bg-orange-100 text-orange-600 w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 font-bold">1</span>
                                     自分に合った配信アプリを選ぶ
                                 </h4>
